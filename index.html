@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Programação</title>
+    <style>
+        /* Resetando a margem e padding de todos os elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fonte padrão */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Estilo da página de login */
+        #loginPage {
+            display: block;
+            text-align: center;
+            padding: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #loginPage h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        #loginPage input {
+            padding: 10px;
+            width: 250px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #loginPage button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #loginPage button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilo da página do curso */
+        #coursePage {
+            display: none;
+        }
+
+        /* Estilo das gavetas */
+        .drawer button {
+            width: 100%;
+            padding: 15px;
+            background-color: #6C757D;
+            color: white;
+            font-size: 18px;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .drawer button:hover {
+            background-color: #5a6268;
+        }
+
+        .drawer-content {
+            display: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .highlight-html {
+            color: #e34c26; /* HTML Color */
+        }
+
+        .highlight-css {
+            color: #2965f1; /* CSS Color */
+        }
+
+        .highlight-js {
+            color: #f0db4f; /* JavaScript Color */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Página de login -->
+    <div id="loginPage">
+        <h2>Entrar no Curso de Programação</h2>
+        <label for="password">Digite a senha:</label>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Entrar</button>
+        <p>Para ter acesso ao curso de programação, entre em contato com o criador. Após efetuar a compra, ele te dará a senha.</p>
+    </div>
+
+    <!-- Página do curso -->
+    <div id="coursePage">
+        <h2>Curso de Programação</h2>
+
+        <!-- Gaveta de HTML -->
+        <div class="drawer">
+            <button onclick="showContent('htmlContent')">HTML</button>
+            <div id="htmlContent" class="drawer-content">
+                <button onclick="showSubContent('htmlPart1')">Parte 1</button>
+                <button onclick="showSubContent('htmlPart2')">Parte 2</button>
+                <button onclick="showSubContent('htmlPart3')">Parte 3</button>
+                <div id="htmlPart1" class="sub-content">
+                    <p><span class="highlight-html">&lt;html&gt;</span> é a tag que marca o início de um documento HTML. O HTML é fundamental para a estruturação de conteúdo na web, criando elementos como cabeçalhos, parágrafos, listas e links. Com HTML, conseguimos adicionar conteúdo estático, como texto, imagens, tabelas e outros elementos necessários para criar um site básico. O HTML também permite a definição da estrutura da página, como seções, divisões e cabeçalhos. A marcação semântica, com o uso de tags apropriadas, como <span class="highlight-html">&lt;header&gt;</span>, <span class="highlight-html">&lt;footer&gt;</span>, <span class="highlight-html">&lt;article&gt;</span>, entre outras, torna o código mais legível e facilita o entendimento da estrutura do conteúdo, tanto para os desenvolvedores quanto para os mecanismos de busca. O HTML permite a inclusão de links, imagens, vídeos, áudios e até mesmo outros documentos através de tags como <span class="highlight-html">&lt;a&gt;</span> e <span class="highlight-html">&lt;img&gt;</span>.</p>
+                    <p>Além disso, o HTML fornece a capacidade de trabalhar com formulários, que são essenciais para a interação com o usuário. Tags como <span class="highlight-html">&lt;form&gt;</span>, <span class="highlight-html">&lt;input&gt;</span> e <span class="highlight-html">&lt;textarea&gt;</span> são utilizadas para coletar dados dos usuários, permitindo que o site seja mais dinâmico e interativo. A marcação HTML também pode ser usada para criar tabelas e listas ordenadas, usando as tags <span class="highlight-html">&lt;table&gt;</span>, <span class="highlight-html">&lt;tr&gt;</span> e <span class="highlight-html">&lt;ul&gt;</span>, entre outras. O HTML fornece a base necessária para o desenvolvimento de qualquer site, sendo a fundação sobre a qual CSS e JavaScript vão atuar para melhorar a aparência e a funcionalidade.</p>
+                    <p>O HTML também possui uma série de atributos que permitem controlar como os elementos se comportam. Através de atributos como <span class="highlight-html">href</span>, <span class="highlight-html">src</span>, <span class="highlight-html">alt</span>, <span class="highlight-html">id</span>, <span class="highlight-html">class</span>, entre outros, é possível adicionar funcionalidades e personalizações aos elementos HTML. A combinação dessas tags e atributos permite criar páginas web altamente interativas, dinâmicas e funcionais.</p>
+                </div>
+                <div id="htmlPart2" class="sub-content">
+                    <p>Uma das partes mais importantes do HTML é a separação da estrutura de conteúdo e estilo. Através de links para arquivos externos de CSS, ou através de tags internas dentro da tag <span class="highlight-html">&lt;style&gt;</span>, é possível controlar o design e a aparência do site sem modificar o conteúdo HTML. Isso permite que os desenvolvedores criem sites que sejam ao mesmo tempo visualmente atraentes e bem estruturados. Além disso, a separação entre estrutura e estilo facilita a manutenção do código e a reutilização de elementos, já que mudanças no estilo podem ser feitas sem afetar o conteúdo. O HTML também permite a inclusão de JavaScript, uma linguagem de programação que adiciona interatividade à página. Através das tags <span class="highlight-html">&lt;script&gt;</span>, podemos adicionar funcionalidades como animações, efeitos de transição, manipulação de elementos na página e muito mais.</p>
+                    <p>Outro aspecto importante do HTML é o uso de metadados, que fornecem informações adicionais sobre a página. Dentro da tag <span class="highlight-html">&lt;head&gt;</span>, é possível incluir elementos como <span class="highlight-html">&lt;meta&gt;</span>, <span class="highlight-html">&lt;link&gt;</span> e <span class="highlight-html">&lt;title&gt;</span>, que ajudam a definir o comportamento da página em relação aos motores de busca, aos navegadores e até mesmo a dispositivos móveis. Esses metadados permitem otimizar a página para SEO (Search Engine Optimization) e melhorar a experiência do usuário ao acessar o site. O HTML continua sendo uma das linguagens mais importantes no desenvolvimento web, e sua compreensão básica é fundamental para qualquer pessoa que deseje se tornar um desenvolvedor web.</p>
+                </div>
+                <div id="htmlPart3" class="sub-content">
+                    <p>A acessibilidade é outro aspecto fundamental quando se trata de HTML. Ao criar páginas web, é importante garantir que elas sejam acessíveis a todos os usuários, independentemente das suas habilidades físicas ou tecnológicas. Tags como <span class="highlight-html">&lt;alt&gt;</span> para fornecer descrições alternativas para imagens e <span class="highlight-html">&lt;aria&gt;</span> para melhorar a interação com leitores de tela são essenciais para garantir a inclusão digital. A acessibilidade é um ponto importante para a criação de sites que sejam acessíveis a pessoas com deficiências visuais, auditivas ou motoras. O HTML oferece ferramentas para tornar os sites mais inclusivos, mas a responsabilidade de implementá-las corretamente é do desenvolvedor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaveta de CSS -->
+        <div class="drawer">
+            <button onclick="showContent('cssContent')">CSS</button>
+            <div id="cssContent" class="drawer-content">
+                <button onclick="showSubContent('cssPart1')">Parte 1</button>
+                <button onclick="showSubContent('cssPart2')">Parte 2</button>
+                <button onclick="showSubContent('cssPart3')">Parte 3</button>
+                <div id="cssPart1" class="sub-content">
+                    <p><span class="highlight-css">CSS</span>, ou Cascading Style Sheets, é uma linguagem de estilo usada para descrever a aparência de um documento HTML. O CSS permite que os desenvolvedores controlem a aparência de elementos na página, como cores, fontes, tamanhos, margens, e muito mais. Ao separar o conteúdo e o estilo, o CSS permite que os desenvolvedores criem layouts flexíveis e responsivos que se ajustam a diferentes tamanhos de tela. Isso é especialmente importante para garantir que as páginas sejam legíveis e utilizáveis em dispositivos móveis. Uma das principais funcionalidades do CSS é a capacidade de definir o layout da página através de propriedades como <span class="highlight-css">display</span>, <span class="highlight-css">position</span>, <span class="highlight-css">flexbox</span> e <span class="highlight-css">grid</span>.</p>
+                    <p>O <span class="highlight-css">flexbox</span> e o <span class="highlight-css">grid</span> são sistemas de layout poderosos que facilitam a criação de interfaces responsivas. O flexbox permite distribuir o espaço entre os itens dentro de um contêiner de forma eficiente e com pouco código. Já o grid oferece uma abordagem ainda mais estruturada, permitindo criar layouts complexos com facilidade. Esses dois sistemas são essenciais para o design de páginas modernas e são amplamente utilizados pelos desenvolvedores.</p>
+                    <p>Além disso, o CSS permite a criação de animações e transições, o que é fundamental para melhorar a experiência do usuário. Através das propriedades <span class="highlight-css">transition</span> e <span class="highlight-css">animation</span>, é possível aplicar efeitos visuais como transições suaves entre estados, como quando um botão muda de cor ao passar o mouse sobre ele, ou animações complexas como o movimento de objetos na página. O uso adequado dessas funcionalidades pode tornar um site mais dinâmico e interessante, criando uma experiência mais envolvente para o usuário.</p>
+                </div>
+                <div id="cssPart2" class="sub-content">
+                    <p>O CSS também possui seletores poderosos que permitem selecionar elementos específicos para aplicar estilos. Alguns dos seletores mais comuns são os seletores de classe, id e tag, que permitem selecionar elementos com base em suas classes, identificadores e tags. Além disso, o CSS oferece a possibilidade de combinar seletores para aplicar estilos em elementos mais específicos. Os seletores de pseudo-classes, como <span class="highlight-css">:hover</span>, <span class="highlight-css">:focus</span> e <span class="highlight-css">:nth-child</span>, permitem adicionar estilos específicos para elementos em determinados estados, como quando o usuário passa o mouse sobre um botão ou seleciona uma opção em um formulário.</p>
+                    <p>Outro recurso importante do CSS é o uso de media queries, que permitem que os desenvolvedores adaptem o layout da página para diferentes dispositivos e tamanhos de tela. Isso é essencial para o design responsivo, que garante que o site seja utilizável em qualquer dispositivo, desde computadores desktop até smartphones. As media queries permitem aplicar diferentes estilos com base na largura da tela, na resolução e em outras características do dispositivo.</p>
+                </div>
+                <div id="cssPart3" class="sub-content">
+                    <p>O CSS também tem uma série de boas práticas e convenções que facilitam a manutenção do código. O uso de classes e ids bem nomeados, a organização do código de forma modular e a adoção de uma metodologia de organização como o BEM (Block Element Modifier) são importantes para garantir que o código CSS seja legível e fácil de manter. Além disso, o uso de pré-processadores CSS, como o SASS e o LESS, permite a criação de códigos mais eficientes e reutilizáveis, com recursos como variáveis, mixins e funções, que tornam o CSS mais poderoso e flexível.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaveta de JavaScript -->
+        <div class="drawer">
+            <button onclick="showContent('jsContent')">JavaScript</button>
+            <div id="jsContent" class="drawer-content">
+                <button onclick="showSubContent('jsPart1')">Parte 1</button>
+                <button onclick="showSubContent('jsPart2')">Parte 2</button>
+                <button onclick="showSubContent('jsPart3')">Parte 3</button>
+                <div id="jsPart1" class="sub-content">
+                    <p><span class="highlight-js">JavaScript</span> é uma linguagem de programação amplamente utilizada no desenvolvimento web para adicionar interatividade às páginas. O JavaScript permite que os desenvolvedores criem funcionalidades dinâmicas, como animações, validação de formulários, manipulação de elementos na página e interações com o servidor. O JavaScript pode ser inserido diretamente no HTML através da tag <span class="highlight-js">&lt;script&gt;</span> ou referenciado por meio de arquivos externos. O JavaScript é uma linguagem baseada em eventos, o que significa que o código JavaScript reage a ações do usuário, como cliques, movimentos do mouse, pressionamento de teclas, entre outros.</p>
+                    <p>Uma das funcionalidades mais poderosas do JavaScript é o DOM (Document Object Model), que permite que o JavaScript acesse e modifique o conteúdo e a estrutura de uma página HTML em tempo real. O DOM é uma representação em árvore do conteúdo da página, onde cada elemento HTML é um nó. O JavaScript pode acessar esses nós e alterá-los, o que permite criar sites interativos que mudam dinamicamente com base nas ações do usuário. Através do uso de métodos como <span class="highlight-js">document.getElementById</span>, <span class="highlight-js">document.querySelector</span> e <span class="highlight-js">document.createElement</span>, os desenvolvedores podem manipular a estrutura do HTML e adicionar, remover ou modificar elementos na página.</p>
+                </div>
+                <div id="jsPart2" class="sub-content">
+                    <p>Além disso, o JavaScript possui um conjunto de recursos de controle de fluxo, como loops, condicionais e funções, que permitem aos desenvolvedores criar lógica de programação complexa. As estruturas de repetição, como <span class="highlight-js">for</span>, <span class="highlight-js">while</span> e <span class="highlight-js">forEach</span>, são usadas para iterar sobre arrays e executar blocos de código várias vezes. Já as estruturas condicionais, como <span class="highlight-js">if</span>, <span class="highlight-js">else</span> e <span class="highlight-js">switch</span>, são usadas para tomar decisões com base em condições específicas.</p>
+                    <p>Outra característica importante do JavaScript é o uso de funções. As funções são blocos de código que podem ser chamados repetidamente em várias partes do programa. Elas ajudam a tornar o código mais modular e reutilizável. O JavaScript também possui funções anônimas e funções de flecha, que permitem escrever funções de forma mais concisa. Além disso, o JavaScript tem suporte para promessas e async/await, que facilitam o trabalho com operações assíncronas, como requisições AJAX e manipulação de arquivos.</p>
+                </div>
+                <div id="jsPart3" class="sub-content">
+                    <p>Uma parte essencial do JavaScript moderno é o uso de frameworks e bibliotecas, como o React, Angular e Vue.js, que facilitam o desenvolvimento de interfaces de usuário dinâmicas. Esses frameworks fornecem ferramentas para criar componentes reutilizáveis, gerenciar o estado da aplicação e interagir com APIs externas. O React, por exemplo, permite criar componentes de interface como funções, que podem ser compostas para criar páginas dinâmicas e interativas. O JavaScript também é usado para trabalhar com APIs, que são interfaces que permitem a comunicação entre sistemas diferentes, como bancos de dados ou serviços externos.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === "senhaSegura") {
+                document.getElementById('loginPage').style.display = "none";
+                document.getElementById('coursePage').style.display = "block";
+            } else {
+                alert("Senha incorreta!");
+            }
+        }
+
+        function showContent(contentId) {
+            var allContents = document.querySelectorAll('.drawer-content');
+            allContents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(contentId).style.display = 'block';
+        }
+
+        function showSubContent(subContentId) {
+            var allSubContents = document.querySelectorAll('.sub-content');
+            allSubContents.forEach(function(subContent) {
+                subContent.style.display = 'none';
+            });
+            document.getElementById(subContentId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
